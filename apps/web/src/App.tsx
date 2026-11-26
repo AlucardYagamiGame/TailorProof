@@ -35,7 +35,7 @@ export default function App() {
         <p className="mt-4 text-slate-600">
           This page only checks that everything is connected. Describe your own application in{' '}
           <code className="rounded bg-slate-200 px-1.5 py-0.5 text-sm">docs/requirements.md</code>{' '}
-          and build it step by step with OpenCode.
+          and build it step by step with Claude Code.
         </p>
 
         <ul className="mt-8 grid gap-4 sm:grid-cols-2">

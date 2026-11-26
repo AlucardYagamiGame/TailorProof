@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "language": "en",
+    "status": "seed: starting entries, every Relation needs the owner's review before use",
+    "note": "Sources are the official project pages of each tool; ESCO and Stack Overflow imports are planned after their licences are checked."
+  },
+
+  "terms": [
+    { "id": "react", "name": "React", "kind": "technology", "caseSensitive": true, "aliases": ["React.js", "ReactJS"] },
+    { "id": "typescript", "name": "TypeScript", "kind": "technology", "aliases": ["TS"], "caseSensitive": false },
+    { "id": "javascript", "name": "JavaScript", "kind": "technology", "aliases": ["JS"], "caseSensitive": false },
+    { "id": "nodejs", "name": "Node.js", "kind": "technology", "aliases": ["Node", "NodeJS", "Node js"], "caseSensitive": false },
+    { "id": "express", "name": "Express", "kind": "technology", "caseSensitive": true, "aliases": ["Express.js"] },
+    { "id": "postgresql", "name": "PostgreSQL", "kind": "technology", "aliases": ["Postgres", "PgSQL"], "caseSensitive": false },
+    { "id": "mysql", "name": "MySQL", "kind": "technology", "aliases": [], "caseSensitive": false },
+    { "id": "redis", "name": "Redis", "kind": "technology", "aliases": [], "caseSensitive": false },
+    { "id": "docker", "name": "Docker", "kind": "technology", "aliases": [], "caseSensitive": false },
+    { "id": "kubernetes", "name": "Kubernetes", "kind": "technology", "aliases": ["k8s"], "caseSensitive": false },
+    { "id": "aws", "name": "AWS", "kind": "technology", "aliases": ["Amazon Web Services"], "caseSensitive": false },
+    { "id": "terraform", "name": "Terraform", "kind": "technology", "aliases": [], "caseSensitive": false },
+    { "id": "github-actions", "name": "GitHub Actions", "kind": "technology", "aliases": [], "caseSensitive": false },
+    { "id": "jest", "name": "Jest", "kind": "technology", "aliases": [], "caseSensitive": false },
+    { "id": "playwright", "name": "Playwright", "kind": "technology", "aliases": [], "caseSensitive": false },
+    { "id": "graphql", "name": "GraphQL", "kind": "technology", "aliases": [], "caseSensitive": false },
+    { "id": "rest", "name": "REST", "kind": "technology", "caseSensitive": true, "aliases": ["RESTful"] },
+    { "id": "kafka", "name": "Kafka", "kind": "technology", "aliases": ["Apache Kafka"], "caseSensitive": false },
+    { "id": "redux-toolkit", "name": "Redux Toolkit", "kind": "technology", "aliases": ["RTK"], "caseSensitive": false },
+    { "id": "zustand", "name": "Zustand", "kind": "technology", "aliases": [], "caseSensitive": false },
+    { "id": "mobx", "name": "MobX", "kind": "technology", "aliases": [], "caseSensitive": false },
+    { "id": "python", "name": "Python", "kind": "technology", "aliases": [], "caseSensitive": false },
+    { "id": "html", "name": "HTML", "kind": "technology", "aliases": ["HTML5"], "caseSensitive": false },
+    { "id": "css", "name": "CSS", "kind": "technology", "aliases": ["CSS3"], "caseSensitive": false },
+    { "id": "git", "name": "Git", "kind": "technology", "caseSensitive": true, "aliases": [] },
+    { "id": "linux", "name": "Linux", "kind": "technology", "aliases": [], "caseSensitive": false },
+
+    { "id": "state-management", "name": "State management", "kind": "concept", "aliases": ["state manager", "state-management"], "caseSensitive": false },
+    { "id": "message-queue", "name": "Message queue", "kind": "concept", "aliases": ["message broker", "event streaming"], "caseSensitive": false },
+    { "id": "containers", "name": "Containers", "kind": "concept", "aliases": ["containerisation", "containerization"], "caseSensitive": false },
+    { "id": "ci-cd", "name": "CI/CD", "kind": "concept", "aliases": ["continuous integration"], "caseSensitive": false },
+    { "id": "infrastructure-as-code", "name": "Infrastructure as code", "kind": "concept", "aliases": ["IaC"], "caseSensitive": false },
+
+    { "id": "fintech", "name": "Fintech", "kind": "domain", "aliases": ["payments"], "caseSensitive": false },
+    { "id": "e-commerce", "name": "E-commerce", "kind": "domain", "aliases": ["ecommerce", "online shop", "online store", "retail"], "caseSensitive": false },
+    { "id": "logistics", "name": "Logistics", "kind": "domain", "aliases": ["supply chain", "shipping"], "caseSensitive": false },
+    { "id": "healthcare", "name": "Healthcare", "kind": "domain", "aliases": ["medtech"], "caseSensitive": false }
+  ],
+
+  "relations": [
+    { "type": "implements", "from": "redux-toolkit", "to": "state-management", "sources": ["https://redux-toolkit.js.org/"], "status": "seed" },
+    { "type": "implements", "from": "zustand", "to": "state-management", "sources": ["https://github.com/pmndrs/zustand"], "status": "seed" },
+    { "type": "implements", "from": "mobx", "to": "state-management", "sources": ["https://mobx.js.org/"], "status": "seed" },
+    { "type": "implements", "from": "kafka", "to": "message-queue", "sources": ["https://kafka.apache.org/"], "status": "seed" },
+    { "type": "implements", "from": "docker", "to": "containers", "sources": ["https://www.docker.com/"], "status": "seed" },
+    { "type": "implements", "from": "github-actions", "to": "ci-cd", "sources": ["https://docs.github.com/en/actions"], "status": "seed" },
+    { "type": "implements", "from": "terraform", "to": "infrastructure-as-code", "sources": ["https://developer.hashicorp.com/terraform"], "status": "seed" },
+
+    { "type": "related", "from": "redux-toolkit", "to": "zustand", "sources": ["https://redux-toolkit.js.org/", "https://github.com/pmndrs/zustand"], "status": "seed", "note": "Both manage client state; having one does not prove the other." },
+    { "type": "related", "from": "redux-toolkit", "to": "mobx", "sources": ["https://redux-toolkit.js.org/", "https://mobx.js.org/"], "status": "seed" },
+    { "type": "related", "from": "postgresql", "to": "mysql", "sources": ["https://www.postgresql.org/", "https://www.mysql.com/"], "status": "seed", "note": "Both are relational databases; a posting that says \"Postgres or MySQL\" gives two Requirements." }
+  ],
+
+  "fluffWords": [
+    "passionate", "results-driven", "team player", "dynamic", "go-getter", "hard-working", "self-motivated",
+    "detail-oriented", "proven track record", "world-class", "fast-paced environment", "responsible for",
+    "strong communication skills", "clean code mindset", "thrives in", "think outside the box"
+  ],
+
+  "ownershipVerbs": ["led", "owned", "designed", "architected", "introduced", "migrated", "mentored", "decided", "established", "founded"],
+  "deliveryVerbs": ["shipped", "deployed", "released", "launched", "delivered", "reduced", "increased", "cut", "raised", "improved", "replaced"],
+
+  "resumeHeadings": {
+    "summary": ["Summary", "Profile", "About me"],
+    "skills": ["Skills", "Technical skills", "Tech stack", "Technologies", "Core skills"],
+    "experience": ["Experience", "Work experience", "Employment", "Professional experience"],
+    "projects": ["Projects", "Personal projects", "Selected projects", "Side projects"],
+    "portfolio": ["Portfolio"],
+    "education": ["Education"],
+    "languages": ["Languages"],
+    "links": ["Links", "Contact"]
+  },
+
+  "postingHeadings": {
+    "must": ["Requirements", "Required", "Must have", "Qualifications"],
+    "nice": ["Nice to have", "Bonus", "Preferred"],
+    "ignore": ["About us", "About the company", "Benefits", "What we offer"],
+    "neutral": ["About the role", "About the job", "What you will do", "Responsibilities"]
+  },
+
+  "markerWords": {
+    "must": ["required", "must", "essential", "mandatory"],
+    "nice": ["plus", "bonus", "nice to have", "preferred"]
+  },
+
+  "navigationLines": ["Show more", "Show less", "Apply", "Save", "Sign in to see who you know"],
+
+  "negationPatterns": [
+    "no experience with", "no commercial experience with", "no hands-on experience with",
+    "never used", "have not worked with", "haven't worked with", "have no experience with"
+  ],
+  "aspirationPatterns": ["currently learning", "plan to learn", "studying", "learning"]
+}

@@ -13,8 +13,9 @@ e2e/        Playwright end-to-end tests (playwright.config.ts at the root)
 docs/       requirements.md (what to build), architecture.md (decisions), glossary.md (domain terms),
             development.md (how to run),
             features/ (planned features: do not implement unless asked)
-.opencode/  OpenCode agents: analyst (requirements, docs only), subagents frontend, backend, reviewer;
-            commands /plan-feature, /implement, /verify
+.claude/    Claude Code config: settings.json (permissions), agents (analyst: requirements, docs only;
+            subagents frontend, backend, reviewer), commands /plan-feature, /implement, /verify
+CLAUDE.md   entry point for Claude Code: imports AGENTS.md and the docs above
 ```
 
 - npm workspaces, one `package.json` at the root. Run commands from the root.
@@ -69,5 +70,6 @@ Use `-w apps/web` or `-w apps/api` to run a script for one app only. Do not run 
 
 ## Pull requests
 
-- The description follows `.github/pull_request_template.md`: fill in Summary, Type, Checklist and Notes.
-- The block between `<!-- auto:start -->` and `<!-- auto:end -->` (Changes) is filled by the `PR description` workflow on every push. Do not edit it by hand: your edits are overwritten.
+- The title follows Conventional Commits (`type: short summary`; types `feat`, `fix`, `docs`, `test`, `refactor`, `chore`, `ci`).
+- The description follows `.github/pull_request_template.md`. Fill every section by meaning: Changes are grouped by idea and explain why, never a list of files. Tick only the verification commands you really ran.
+- Use `/pr` to write the description from the commits and diff and open the PR.

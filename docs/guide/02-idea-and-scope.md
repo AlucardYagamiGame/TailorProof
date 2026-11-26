@@ -59,7 +59,7 @@ Write it in English, in Markdown.
 
 ## 2.4 Glossary
 
-Name the words of your domain now, while they are fresh. Free models are weak: if two words sound alike (for example *product* and *order item*), they **will** mix them up in code and UI. A glossary in a separate file prevents that — every agent reads it before every task.
+Name the words of your domain now, while they are fresh. If two words sound alike (for example *product* and *order item*), the model **will** sooner or later mix them up in code and UI. A glossary in a separate file prevents that — every agent reads it before every task.
 
 In the same chat:
 
@@ -118,4 +118,4 @@ If your course keeps a shared list of ideas, add yours there, so everyone builds
 - [ ] `data/seed.json` contains realistic sample data, including tricky cases.
 - [ ] The brief is committed.
 
-Next: [Step 3. Data, key decisions and hosting](03-data-and-hosting.md) — from there on you work in OpenCode.
+Next: [Step 3. Data, key decisions and hosting](03-data-and-hosting.md) — from there on you work in Claude Code.

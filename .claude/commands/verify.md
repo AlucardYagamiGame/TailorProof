@@ -1,6 +1,7 @@
 ---
 description: Run lint, type checks, tests, build and E2E, then review the changes against the requirements
-agent: build
+argument-hint: "[extra focus]"
+allowed-tools: Bash(git status:*), Bash(git diff:*), Bash(npm run:*), Bash(npm test:*)
 ---
 
 Verify the current state of the application and the recent changes. Do not change any files while verifying: only run checks, review, and report.

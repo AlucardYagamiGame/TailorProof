@@ -22,9 +22,9 @@ Practical instructions for running, testing and debugging the project.
 │       └── eslint.config.js
 ├── e2e/                        Playwright tests
 ├── docs/                       requirements, architecture, this guide
-├── .opencode/                  OpenCode agents and commands
+├── .claude/                    Claude Code settings, agents and commands
+├── CLAUDE.md                   entry point for Claude Code (imports AGENTS.md and docs)
 ├── AGENTS.md                   instructions for AI agents
-├── opencode.jsonc              OpenCode configuration
 ├── playwright.config.ts
 └── package.json                workspace root and shared scripts
 ```
@@ -203,18 +203,17 @@ Errors such as `EADDRINUSE: address already in use :::3001` or `Port 5173 is alr
 - `npm run typecheck` and `npm run lint` print the file and line. Fix the first error first; later ones are often caused by it.
 - Backend import errors (`Cannot find module './routes'`): relative imports in `apps/api` need the `.ts` extension, e.g. `./routes.ts`.
 
-### OpenCode cannot use a model
+### Claude Code does not answer
 
-- Run `/connect` and check that a provider is connected, then pick a model with `/models`.
-- `Model unavailable` or a payment request: the free model was removed, is not available in your region, or is no longer free. Pick another one.
-- Check `opencode --version` and your internet connection.
-- Logs: `~/.local/share/opencode/log/opencode.log`.
+- Run `/login` and check that you are signed in, then check the model with `/model`.
+- Run `/status` and `/doctor` to see the version, account and configuration problems.
+- Check `claude --version` and your internet connection.
 
-### A free model hit its limit
+### You hit a usage limit
 
-- Wait (limits are often daily) or switch to another free model with `/models`.
-- Save requests: start a new session (`/new`) for each task, write specific prompts, attach only the files that matter (`@file`).
+- Wait for the limit to reset or switch to a lighter model with `/model`.
+- Save usage: start a new conversation (`/clear`) for each task, write specific prompts, attach only the files that matter (`@file`).
 
 ### The agent wrote broken or incomplete code
 
-This is normal. Run the checks, give the agent the **exact** error, make the step smaller, undo with `/undo` or `git restore .`, start a fresh session with `/new`, or try another model. More tips: [docs/guide/06-build-the-mvp.md](guide/06-build-the-mvp.md#64-when-the-agent-gets-stuck).
+This is normal. Run the checks, give the agent the **exact** error, make the step smaller, undo with `/rewind` or `git restore .`, start a fresh conversation with `/clear`, or try another model. More tips: [docs/guide/06-build-the-mvp.md](guide/06-build-the-mvp.md#64-when-the-agent-gets-stuck).

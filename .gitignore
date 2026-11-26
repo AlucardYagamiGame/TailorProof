@@ -18,6 +18,10 @@ playwright/.cache/
 !.env.example
 *.pem
 
+# Claude Code personal files
+.claude/settings.local.json
+CLAUDE.local.md
+
 # Logs
 *.log
 npm-debug.log*

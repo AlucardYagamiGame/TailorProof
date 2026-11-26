@@ -6,7 +6,7 @@ Right now the README describes the starter. A recruiter opening your repo should
 
 ## 9.1 Rewrite the README
 
-In OpenCode (**build**):
+In Claude Code (normal mode):
 
 ```text
 Rewrite README.md so it describes MY application, not the starter. Use docs/requirements.md
@@ -16,7 +16,7 @@ and docs/architecture/ as sources. Sections:
 3. Features (what a user can do).
 4. Tech stack.
 5. Run locally (install, .env variables if any, dev, test).
-6. How it was built: AI-first workflow with OpenCode — requirements first, plan/implement/verify loop,
+6. How it was built: AI-first workflow with Claude Code — requirements first, plan/implement/verify loop,
    specialized agents, tests. Link docs/requirements.md, docs/architecture/ and AGENTS.md.
 Keep it short and honest. Do not invent features that do not exist.
 ```

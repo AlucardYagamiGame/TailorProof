@@ -15,7 +15,7 @@ Take the feature you planned in Step 2 (`docs/features/<feature-name>.md`), or p
 
 ## 7.2 Docs first
 
-Update the requirements **before** any code. In OpenCode, switch to the **analyst**:
+Update the requirements **before** any code. In Claude Code, start the **analyst** (`claude --agent analyst`):
 
 ```text
 I want to add the feature described in docs/features/<feature-name>.md.
@@ -54,7 +54,7 @@ Use the reviewer subagent to review all changes on this branch compared to main.
 Focus on: bugs, missing tests, broken existing features, mismatch with docs/requirements.md.
 ```
 
-**Expected agent behavior:** the reviewer reads the diff and returns findings ordered by severity with suggested fixes. It cannot change files. Fix what matters with the build agent, then run `/verify` again.
+**Expected agent behavior:** the reviewer reads the diff and returns findings ordered by severity with suggested fixes. It cannot change files. Fix what matters in a normal session, then run `/verify` again.
 
 ## 7.5 Update the docs and merge
 
