@@ -1,6 +1,6 @@
 # Step 1. Setup
 
-**Goal:** your own copy of the starter runs on your computer, and the AI agent works in it.
+**Goal:** your own copy of the starter runs on your computer, and Claude Code works in it.
 
 ## 1.1 Install the tools
 
@@ -55,59 +55,53 @@ npm run test:e2e           # end-to-end tests
 
 Everything should be green. Problems? See [Troubleshooting](../development.md#troubleshooting).
 
-## 1.5 Install OpenCode
+## 1.5 Install Claude Code
 
-macOS / Linux:
-
-```bash
-curl -fsSL https://opencode.ai/v2/install | bash
-```
-
-Windows: download the Windows zip from [opencode.ai/docs](https://opencode.ai/docs). Other options are listed there too.
+Follow the current instructions at [code.claude.com/docs](https://code.claude.com/docs). For example, with npm:
 
 ```bash
-opencode --version
+npm install -g @anthropic-ai/claude-code
+claude --version
 ```
 
-## 1.6 Connect a free model
+## 1.6 Sign in
 
-Always start OpenCode **from the repository root**, so it picks up the project configuration:
+Always start Claude Code **from the repository root**, so it picks up the project configuration:
 
 ```bash
-opencode
+claude
 ```
 
-Then inside OpenCode:
+Then inside Claude Code:
 
-1. `/connect` → choose **OpenCode Zen** and follow the instructions.
-2. `/models` → pick a model with **Free** in its name.
+1. `/login` → sign in with your Claude subscription (Pro or higher) or an Anthropic Console account with API credits.
+2. `/model` → pick a model. A stronger model costs more usage; a lighter one is enough for small steps.
 
 Good to know:
 
-- Free models change often. If one disappears or stops working, pick another one.
-- Free models have limits — and they are small. In our test a free model ran out after **5–7 prompts**, not enough for one user story. If you hit a limit, wait or switch the model, and spread the work over several days.
-- The limit may be shared between free models (per account or network), so switching does not always help.
-- Free is enough to **learn the process**. For regular, serious work, plan for a paid plan or your own API key — everything this guide teaches about small steps and short context saves money there too.
-- Free model providers may store your prompts. **Never paste passwords, API keys or personal data into the chat.**
+- Claude Code is not free: it uses your subscription limits or API credits. Small steps and short context (see Step 6) save both.
+- If you hit a usage limit, wait for it to reset or switch to a lighter model with `/model`.
+- **Never paste passwords, API keys or personal data into the chat.**
 
 ## 1.7 Meet the AI setup
 
 | Thing | What it is |
 | --- | --- |
-| `build` agent | Default. Reads and edits files, runs commands. |
-| `plan` agent | Read-only. Thinks and plans, never edits. Switch with `Shift+Tab` (or `/agents`). |
-| `analyst` agent | Ours. Writes requirements, glossary and feature files. Can edit only `docs/` and `data/`, never code. Asks questions before writing. |
+| Default mode | Reads and edits files, runs commands; asks you before risky actions. |
+| Plan mode | Read-only. Thinks and plans, never edits. Switch modes with `Shift+Tab`. |
+| `analyst` agent | Ours. Writes requirements, glossary and feature files. Can edit only `docs/` and `data/`, never code. Asks questions before writing. Start it with `claude --agent analyst`. |
 | `frontend`, `backend` subagents | Specialists the main agent can delegate to. Can edit files. |
 | `reviewer` subagent | Reviews changes. Cannot edit anything. |
-| `/plan-feature` | Plans a feature: API, acceptance criteria, steps. No code changes. |
+| `/plan-feature` | Plans a feature: API, acceptance criteria, steps. No code changes. Run it in plan mode. |
 | `/implement` | Implements a feature or the agreed plan, adds tests, runs checks. |
 | `/verify` | Runs lint, typecheck, tests, build, E2E and a review. Reports PASS / FAIL. |
+| `CLAUDE.md` | The file Claude Code reads first. It imports `AGENTS.md`, requirements, architecture and glossary. |
 | `AGENTS.md` | Rules every agent reads. If the agent keeps doing something wrong, add a rule here. |
-| `opencode.jsonc` | Configuration and permissions: safe `npm` and `git` read commands are allowed, other shell commands ask you, `git push` is forbidden. |
+| `.claude/settings.json` | Permissions: safe `npm` and `git` read commands are allowed, other shell commands ask you, `git push` is forbidden. |
 
 All of these are plain text files. Open them and read them: this is exactly what the agent "knows".
 
-Useful keys: `/new` new session, `/undo` undo the last change, `@` attach a file, `/` list all commands.
+Useful keys: `/clear` new conversation, `/rewind` undo the last changes, `@` attach a file, `/` list all commands, `/agents` list agents.
 
 ## 1.8 First prompt
 
@@ -125,6 +119,6 @@ and list the npm commands I can use to check my work. Do not change any files.
 - [ ] Your own repository on GitHub, cloned locally.
 - [ ] `npm run dev` shows "Connected to api v0.1.0".
 - [ ] `npm run test` and `npm run test:e2e` pass.
-- [ ] OpenCode with a free model answered the first prompt.
+- [ ] Claude Code answered the first prompt.
 
 Next: [Step 2. Idea and scope](02-idea-and-scope.md)

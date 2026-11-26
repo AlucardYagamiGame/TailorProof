@@ -1,9 +1,9 @@
 ---
 description: Plan a feature without changing code. Usage /plan-feature <feature description>
-agent: plan
+argument-hint: "<feature description>"
 ---
 
-Create an implementation plan for this feature. Do NOT implement it and do not change any project files.
+Create an implementation plan for this feature. Do NOT implement it and do not change any project files. (Run this command in plan mode — Shift+Tab until "plan mode" is shown — so that editing is blocked.)
 
 Feature request:
 
@@ -21,4 +21,4 @@ Work through these steps:
 6. **Plan implementation and verification.** Break the work into small ordered steps that can each be finished and checked separately. For each step name the files involved, the tests to add, and the checks to run (`npm run lint`, `npm run typecheck`, `npm run test`, `npm run build`, `npm run test:e2e`). Mention which steps fit the `frontend` or `backend` subagent.
 7. **Highlight ambiguities.** List open questions and risky assumptions, and recommend a default for each.
 
-Finish with: "Review this plan. When it is ready, switch to the build agent and run `/implement` (or `/implement <step>` to do one step at a time)." Also mention whether `docs/requirements.md` or `docs/architecture.md` should be updated before implementation.
+Finish with: "Review this plan. When it is ready, leave plan mode and run `/implement` (or `/implement <step>` to do one step at a time)." Also mention whether `docs/requirements.md` or `docs/architecture.md` should be updated before implementation.

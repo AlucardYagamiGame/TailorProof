@@ -1,6 +1,6 @@
 # Architecture
 
-This file records **how** the application is built and **why**. Keep it short and up to date: AI agents read it before every task (it is loaded automatically through `opencode.jsonc`), and so will anyone who reviews your project.
+This file records **how** the application is built and **why**. Keep it short and up to date: AI agents read it before every task (it is loaded automatically through `CLAUDE.md`), and so will anyone who reviews your project.
 
 ## Provided infrastructure
 

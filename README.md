@@ -1,20 +1,20 @@
 # AI-Ready Full-Stack Starter
 
-A starter repository for learning **AI-first development** with [OpenCode](https://opencode.ai) and free AI models.
+A starter repository for learning **AI-first development** with [Claude Code](https://claude.com/claude-code).
 
 It gives you a working React + Express app with tests and a configured AI environment, but **no product features**. You come up with your own idea and build it with an AI coding agent: requirements → plan → code → checks → deploy.
 
-Everything here is free. You do not need a paid AI subscription.
+Claude Code needs a Claude subscription (Pro or higher) or an Anthropic API key. Everything else here is free.
 
 ## The guide
 
 Follow the steps in order. Every step ends with a concrete result you can check.
 
-Step 2 is about the product: do it in any AI chat. **From Step 3 on, work in OpenCode** inside your repository: the agent reads your requirements and planned feature, explains the trade-offs and records decisions in your files.
+Step 2 is about the product: do it in any AI chat. **From Step 3 on, work in Claude Code** inside your repository: the agent reads your requirements and planned feature, explains the trade-offs and records decisions in your files.
 
 | Step | What you do | Result |
 | --- | --- | --- |
-| [1. Setup](docs/guide/01-setup.md) | Create your repo, run the app, connect OpenCode | App runs, tests pass, the agent answers |
+| [1. Setup](docs/guide/01-setup.md) | Create your repo, run the app, sign in to Claude Code | App runs, tests pass, the agent answers |
 | [2. Idea and scope](docs/guide/02-idea-and-scope.md) | Pick a unique idea, a small MVP and the next feature (any AI chat) | Brief, `docs/glossary.md`, `docs/features/`, `data/seed.json` |
 | [3. Data, key decisions and hosting](docs/guide/03-data-and-hosting.md) | Decide storage, key decisions and hosting; connect the database | Decisions in `docs/architecture.md`, `.env` |
 | [4. Requirements](docs/guide/04-requirements.md) | Turn the brief into testable requirements with the agent | Complete `docs/requirements.md` |
@@ -44,9 +44,9 @@ apps/web/        React 19 + Vite + Tailwind CSS frontend
 apps/api/        Express 5 backend (one endpoint: GET /api/version)
 e2e/             Playwright end-to-end tests
 docs/            requirements.md, architecture.md, glossary.md, development.md, guide/, demo/ (webinar notes)
-.opencode/       AI agents (analyst; subagents frontend, backend, reviewer) and commands (/plan-feature, /implement, /verify)
+.claude/         Claude Code setup: permissions (settings.json), agents (analyst; subagents frontend, backend, reviewer), commands (/plan-feature, /implement, /verify)
+CLAUDE.md        entry point for Claude Code: imports AGENTS.md and the docs
 AGENTS.md        rules for AI agents
-opencode.jsonc   OpenCode configuration and permissions
 ```
 
 React · Vite · Tailwind CSS · TypeScript · Node.js · Express · Vitest · React Testing Library · Supertest · Playwright · ESLint

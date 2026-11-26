@@ -1,6 +1,6 @@
 ---
 description: Implement a feature or the approved plan. Usage /implement [feature, plan step, or nothing to use the approved plan]
-agent: build
+argument-hint: "[feature, plan step, or empty]"
 ---
 
 Implement the following:

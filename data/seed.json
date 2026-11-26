@@ -1,0 +1,179 @@
+{
+  "resumes": [
+    {
+      "title": "Full-Stack Engineer (strong match)",
+      "note": "Kafka only in Projects (orange); \"state manager\" instead of Redux Toolkit (clarification); \"HTTP endpoints\" instead of REST (disputed pair); k8s is an alias of Kubernetes.",
+      "sections": {
+        "skills": ["React", "TypeScript", "JavaScript", "Node.js", "Express", "PostgreSQL", "Docker", "k8s", "AWS", "GitHub Actions", "Jest"],
+        "experience": [
+          {
+            "company": "Brightwater Retail",
+            "role": "Full-Stack Engineer",
+            "period": "2022 – present",
+            "bullets": [
+              "Built the checkout flow in React and TypeScript, which raised conversion by 12%.",
+              "Led the move of the billing service from a monolith to separate services and cut deploy time by 40%.",
+              "Designed HTTP endpoints for the mobile app, with versioned routes and token authentication.",
+              "Containerised 9 services with Docker and moved them to k8s, cutting infrastructure cost by 25%."
+            ]
+          },
+          {
+            "company": "Paper Boat Studio",
+            "role": "Developer",
+            "period": "2019 – 2022",
+            "bullets": [
+              "Developed internal tools in JavaScript and Node.js used by 200 employees.",
+              "Wrote SQL reports in PostgreSQL that replaced 3 weekly spreadsheets."
+            ]
+          }
+        ],
+        "projects": [
+          { "name": "Storefront dashboard", "description": "React app with a custom state manager, tested with Jest." },
+          { "name": "Event pipeline", "description": "Node.js consumers reading orders from Kafka and writing them to PostgreSQL." }
+        ],
+        "portfolio": ["https://example.com/iris-calder"],
+        "education": ["BSc Computer Science, University of Porto, 2019"],
+        "languages": ["English (C1)", "Portuguese (native)"],
+        "links": [],
+        "other": []
+      },
+      "text": "Iris Calder\nFull-Stack Engineer\nEmail: iris.calder@example.com | Location: Porto, Portugal\n\nSKILLS\nReact, TypeScript, JavaScript, Node.js, Express, PostgreSQL, Docker, k8s, AWS, GitHub Actions, Jest\n\nEXPERIENCE\nFull-Stack Engineer, Brightwater Retail (2022 – present)\n- Built the checkout flow in React and TypeScript, which raised conversion by 12%.\n- Led the move of the billing service from a monolith to separate services and cut deploy time by 40%.\n- Designed HTTP endpoints for the mobile app, with versioned routes and token authentication.\n- Containerised 9 services with Docker and moved them to k8s, cutting infrastructure cost by 25%.\n\nDeveloper, Paper Boat Studio (2019 – 2022)\n- Developed internal tools in JavaScript and Node.js used by 200 employees.\n- Wrote SQL reports in PostgreSQL that replaced 3 weekly spreadsheets.\n\nPROJECTS\nStorefront dashboard: React app with a custom state manager, tested with Jest.\nEvent pipeline: Node.js consumers reading orders from Kafka and writing them to PostgreSQL.\n\nPORTFOLIO\nhttps://example.com/iris-calder\n\nEDUCATION\nBSc Computer Science, University of Porto, 2019\n\nLANGUAGES\nEnglish (C1), Portuguese (native)\n"
+    },
+    {
+      "title": "Junior Web Developer (no work experience)",
+      "note": "No Experience section: the \"I have no work experience\" switch and the offer to add irrelevant experience.",
+      "sections": {
+        "skills": ["HTML", "CSS", "JavaScript", "React", "Git"],
+        "experience": [],
+        "projects": [
+          { "name": "Recipe finder", "description": "React app that searches a public API and saves favourites in the browser." },
+          { "name": "Budget tracker", "description": "JavaScript app with charts; tested manually." }
+        ],
+        "portfolio": [],
+        "education": ["BSc Applied Mathematics, Lviv University, 2025"],
+        "languages": ["English (B2)", "Ukrainian (native)"],
+        "links": [],
+        "other": []
+      },
+      "text": "Leo Marsh\nJunior Web Developer\nEmail: leo.marsh@example.com | Location: Lviv, Ukraine\n\nSKILLS\nHTML, CSS, JavaScript, React, Git\n\nPROJECTS\nRecipe finder: React app that searches a public API and saves favourites in the browser.\nBudget tracker: JavaScript app with charts; tested manually.\n\nEDUCATION\nBSc Applied Mathematics, Lviv University, 2025\n\nLANGUAGES\nEnglish (B2), Ukrainian (native)\n"
+    },
+    {
+      "title": "Backend Developer (tricky cases)",
+      "note": "Fluff in the summary and in a bullet; negation (\"no commercial experience with Kubernetes\"); aspiration (\"currently learning Docker\"); \"HTTP endpoints\" for REST; an unrecognised heading (LEARNING) goes to Other.",
+      "sections": {
+        "skills": ["Python", "Redis", "Terraform", "Linux", "Git"],
+        "experience": [
+          {
+            "company": "Lumen Analytics",
+            "role": "Backend Developer",
+            "period": "2021 – 2025",
+            "bullets": [
+              "Responsible for team communication and clean code.",
+              "Led a team of 5 engineers and cut release time by 30%, keeping clean code standards.",
+              "Built a machine learning prototype with Python to classify support tickets.",
+              "Deployed Redis-backed services without downtime during a 3-month migration.",
+              "Designed HTTP endpoints for a mobile app, with versioned routes and token authentication.",
+              "Ran services in containers on a cloud VM."
+            ]
+          }
+        ],
+        "projects": [],
+        "portfolio": [],
+        "education": [],
+        "languages": [],
+        "links": [],
+        "summary": [
+          "Passionate team player with strong communication skills and a clean code mindset.",
+          "Dynamic, results-driven professional who thrives in fast-paced environments."
+        ],
+        "other": [
+          {
+            "heading": "LEARNING",
+            "lines": [
+              "I have no commercial experience with Kubernetes.",
+              "I am currently learning Docker."
+            ]
+          }
+        ]
+      },
+      "text": "Dan Okoye\nBackend Developer\nEmail: dan.okoye@example.com | Location: Lagos, Nigeria\n\nSUMMARY\nPassionate team player with strong communication skills and a clean code mindset.\nDynamic, results-driven professional who thrives in fast-paced environments.\n\nSKILLS\nPython, Redis, Terraform, Linux, Git\n\nEXPERIENCE\nBackend Developer, Lumen Analytics (2021 – 2025)\n- Responsible for team communication and clean code.\n- Led a team of 5 engineers and cut release time by 30%, keeping clean code standards.\n- Built a machine learning prototype with Python to classify support tickets.\n- Deployed Redis-backed services without downtime during a 3-month migration.\n- Designed HTTP endpoints for a mobile app, with versioned routes and token authentication.\n- Ran services in containers on a cloud VM.\n\nLEARNING\n- I have no commercial experience with Kubernetes.\n- I am currently learning Docker.\n"
+    }
+  ],
+
+  "vacancies": [
+    {
+      "company": "Brightside Labs",
+      "title": "Full-Stack Engineer",
+      "source": "manual",
+      "note": "Kafka and Go appear under \"About us\" (ignored) and Kafka again under \"Nice to have\" (counts); Redux Toolkit needs a clarification; REST is a disputed pair for the strong resume.",
+      "text": "Full-Stack Engineer\nBrightside Labs — Remote (EU)\n\nAbout us\nBrightside Labs builds billing software for small businesses. Our core services are written in Go and run on Kafka.\n\nRequirements\n- 4+ years of experience with React and TypeScript\n- Solid Node.js and REST API design\n- Experience with PostgreSQL\n- Docker and Kubernetes in production\n- State management with Redux Toolkit\n- Redis for caching\n\nNice to have\n- AWS\n- Kafka\n- GraphQL\n- Terraform\n"
+    },
+    {
+      "company": "Northgate Apps",
+      "title": "Junior Web Developer",
+      "source": "manual",
+      "note": "\"Willingness to learn\" has no Term: it is a line that is not checked.",
+      "text": "Junior Web Developer\nNorthgate Apps\n\nRequirements\n- HTML and CSS\n- JavaScript basics\n- Willingness to learn\n\nNice to have\n- React\n- Git\n"
+    },
+    {
+      "company": "Initech",
+      "title": "Backend Engineer (Python)",
+      "source": "manual",
+      "note": "For the tricky resume: Docker is aspirational, Kubernetes is negated, REST is a disputed pair, Redis and Terraform are in Skills.",
+      "text": "Backend Engineer (Python)\nInitech\n\nRequirements\n- Production Python experience\n- Designing REST APIs\n- Docker\n- Kubernetes\n- Redis\n\nNice to have\n- Terraform\n- PostgreSQL\n"
+    },
+    {
+      "company": "Stark Digital",
+      "title": "Full-Stack Developer",
+      "source": "link",
+      "note": "A pasted web page: navigation lines to skip, bullets with \"•\", an inline heading \"Nice to have: Docker\".",
+      "text": "Stark Digital\nFull-Stack Developer\nRemote · Full-time · Mid-Senior level\nSign in to see who you know\nShow more\nAbout the job\nWe are looking for a developer to join our product team.\nRequirements:\n• JavaScript and React\n• Node.js\n• Postgres or MySQL\n• Git\nNice to have: Docker\nShow less\nApply\nSave\n"
+    },
+    {
+      "company": "Globex Systems",
+      "title": "Office Operations Coordinator",
+      "source": "manual",
+      "note": "No known Terms: the app says no known requirements were found and lists the Requirements lines as not checked.",
+      "text": "Office Operations Coordinator\nGlobex Systems\n\nAbout the role\nYou will coordinate daily schedules, welcome visitors, order supplies and keep the office running smoothly.\n\nRequirements\n- Clear written and spoken English\n- Calm under pressure\n- Previous experience in a similar role\n"
+    }
+  ],
+
+  "samples": [
+    {
+      "name": "Strong match",
+      "resume": "Full-Stack Engineer (strong match)",
+      "vacancy": { "company": "Brightside Labs", "title": "Full-Stack Engineer" },
+      "demonstrates": [
+        "green: React, TypeScript, Node.js, PostgreSQL, Docker, AWS (in Skills)",
+        "green through an alias: Kubernetes (k8s in Skills)",
+        "orange: Kafka (only in Projects) with the \"Add to Skills\" suggestion",
+        "clarification: Redux Toolkit against \"state manager\" in Projects",
+        "disputed pair: REST API design against \"HTTP endpoints\"",
+        "red: Redis, GraphQL, Terraform",
+        "ignored section: Go and Kafka under \"About us\" are not Requirements"
+      ]
+    },
+    {
+      "name": "Tricky cases",
+      "resume": "Backend Developer (tricky cases)",
+      "vacancy": { "company": "Initech", "title": "Backend Engineer (Python)" },
+      "demonstrates": [
+        "gap with a negated reason: Kubernetes",
+        "gap with an aspirational reason: Docker",
+        "disputed pair: REST against \"HTTP endpoints\"",
+        "fluff: the summary and \"Responsible for team communication and clean code.\"",
+        "unassigned text: the LEARNING section"
+      ]
+    },
+    {
+      "name": "No work experience",
+      "resume": "Junior Web Developer (no work experience)",
+      "vacancy": { "company": "Northgate Apps", "title": "Junior Web Developer" },
+      "demonstrates": [
+        "optional Experience: the switch and the offer to add irrelevant experience",
+        "not checked line: Willingness to learn",
+        "orange candidates: none; React is in Skills"
+      ]
+    }
+  ]
+}

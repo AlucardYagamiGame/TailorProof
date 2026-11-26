@@ -4,7 +4,7 @@
 
 ## 5.1 Why now
 
-In Step 3 you made the big decisions: storage, login, hosting. That is not enough. Without agreed code-level rules, a free model invents them again in every session: a different folder layout, a second way to call the database, a new validation style, one more UI library. After three stories you have three styles — the architecture starts to drift before the MVP is even built.
+In Step 3 you made the big decisions: storage, login, hosting. That is not enough. Without agreed code-level rules, the model invents them again in every session: a different folder layout, a second way to call the database, a new validation style, one more UI library. After three stories you have three styles — the architecture starts to drift before the MVP is even built.
 
 Decide once, write it down, and let every agent read it:
 
@@ -17,25 +17,26 @@ You will do it with a new agent, the **architect**, and a new place for the docs
 
 ## 5.2 Create the architect agent
 
-An agent is not a different model — it is a role: its own instructions, its own permissions, its own context. The analyst writes *what* to build and must not invent technical decisions; the architect decides *how*. Mixing both in one prompt confuses a weak model.
+An agent is not a different model — it is a role: its own instructions, its own permissions, its own context. The analyst writes *what* to build and must not invent technical decisions; the architect decides *how*. Mixing both in one prompt confuses the model.
 
-In OpenCode (**build** agent):
+In Claude Code (normal mode):
 
 ```text
-Create a new primary agent .opencode/agents/architect.md, modeled on .opencode/agents/analyst.md.
+Create a new agent .claude/agents/architect.md, modeled on .claude/agents/analyst.md.
 Role: software architect. It reads docs/requirements.md, docs/glossary.md, docs/features/,
 the decisions already made and the code, and writes ONLY files in docs/architecture/.
 For every open technical choice it proposes 2–3 options with trade-offs and waits for my choice.
 It records every decision in the decision log. It never writes code.
-Permissions: edit denied everywhere except docs/architecture/; shell denied except read-only git;
-subagents denied except explore. Show me the file, do not change anything else.
+Permissions: tools Read, Grep, Glob, Edit, Write (no Bash). Add a PreToolUse hook like the analyst's,
+but with a copy of .claude/hooks/docs-only.mjs that allows edits only inside docs/architecture/.
+Show me the files, do not change anything else.
 ```
 
-**Expected agent behavior:** one new file with a frontmatter like the analyst's and a short role prompt. Check the permissions block yourself. Restart OpenCode if `architect` does not appear in `/agents`.
+**Expected agent behavior:** a new agent file with a frontmatter like the analyst's, a short role prompt and a hook script. Check the `tools` list and the hook yourself. If `architect` does not appear in `/agents`, restart Claude Code.
 
 ## 5.3 Turn the architecture file into a folder
 
-Still in **build**:
+Still in normal mode:
 
 ```text
 Replace docs/architecture.md with a folder docs/architecture/:
@@ -45,19 +46,19 @@ Replace docs/architecture.md with a folder docs/architecture/:
 - frontend.md   frontend structure and rules
 - decisions.md  the decision log (move the existing entries here unchanged)
 Move the existing content into the right files and delete docs/architecture.md.
-Then update every reference to docs/architecture.md: AGENTS.md, opencode.jsonc (load only
+Then update every reference to docs/architecture.md: AGENTS.md, CLAUDE.md (import only
 docs/architecture/README.md and docs/architecture/decisions.md into every session),
-.opencode/agents and .opencode/commands (the backend agent reads backend.md and data-model.md,
+.claude/agents and .claude/commands (the backend agent reads backend.md and data-model.md,
 the frontend agent reads frontend.md). Do not write code. Show me the list of changed files.
 ```
 
 **Expected agent behavior:** five files, the decision log moved without changes, no references to the old file left. Check with a search for `docs/architecture.md` — it should find nothing outside `docs/guide/`.
 
-Why not load all five files into every session? Free models have small limits, and every extra file in the context costs requests and attention. Each agent reads the part it needs.
+Why not load all five files into every session? Every extra file in the context costs usage and attention. Each agent reads the part it needs.
 
 ## 5.4 Design it with the architect
 
-Switch to **architect** (`Shift+Tab` or `/agents`):
+Start the **architect**: run `claude --agent architect` from the repository root.
 
 ```text
 Read the requirements, the glossary, the planned feature and the decisions.
@@ -69,11 +70,11 @@ For every open choice give me 2–3 options with trade-offs and wait for my answ
 No code.
 ```
 
-**Expected agent behavior:** it asks or offers options first — it does not write a finished architecture in one go. After your answers it fills the files and adds entries to `decisions.md`. If it starts writing code, it is the wrong agent: check `/agents`.
+**Expected agent behavior:** it asks or offers options first — it does not write a finished architecture in one go. After your answers it fills the files and adds entries to `decisions.md`. If it starts writing code, it is the wrong agent or the hook is missing: check `.claude/agents/architect.md`.
 
 ## 5.5 Review it
 
-Start a fresh session (`/new`), switch to **plan**:
+Start a fresh conversation (`/clear`) in a normal session (without `--agent`) and switch to **plan mode** (`Shift+Tab`):
 
 ```text
 Review docs/architecture/ as a strict senior developer.
@@ -82,18 +83,18 @@ the glossary or the decision log? Is anything over-engineered for an MVP?
 Are there choices left open that /implement would have to guess? Only list problems.
 ```
 
-Then back to **architect**: "Fix findings N and M; leave K as is."
+Then start the **architect** again (`claude --agent architect`): "Fix findings N and M; leave K as is."
 
 ## 5.6 Commit
 
 ```bash
-git add docs AGENTS.md opencode.jsonc .opencode
+git add docs AGENTS.md CLAUDE.md .claude
 git commit -m "Architecture: architect agent and docs/architecture/"
 ```
 
 ## ✅ Result
 
-- [ ] `.opencode/agents/architect.md` exists; it can edit only `docs/architecture/`.
+- [ ] `.claude/agents/architect.md` exists; it can edit only `docs/architecture/`.
 - [ ] `docs/architecture/` has `README.md`, `data-model.md`, `backend.md`, `frontend.md`, `decisions.md`; `docs/architecture.md` is gone and nothing refers to it.
 - [ ] The data model covers every entity from the requirements and the seed.
 - [ ] Libraries are decided (ORM usage, validation, UI library or none) and recorded in `decisions.md`.
