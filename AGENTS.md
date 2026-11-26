@@ -69,5 +69,6 @@ Use `-w apps/web` or `-w apps/api` to run a script for one app only. Do not run 
 
 ## Pull requests
 
-- The description follows `.github/pull_request_template.md`: fill in Summary, Type, Checklist and Notes.
-- The block between `<!-- auto:start -->` and `<!-- auto:end -->` (Changes) is filled by the `PR description` workflow on every push. Do not edit it by hand: your edits are overwritten.
+- The title follows Conventional Commits (`type: short summary`; types `feat`, `fix`, `docs`, `test`, `refactor`, `chore`, `ci`).
+- The description follows `.github/pull_request_template.md`. Fill every section by meaning: Changes are grouped by idea and explain why, never a list of files. Tick only the verification commands you really ran.
+- Use `/pr` to write the description from the commits and diff and open the PR.
