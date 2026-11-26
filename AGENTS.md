@@ -66,3 +66,9 @@ Use `-w apps/web` or `-w apps/api` to run a script for one app only. Do not run 
 - Run the relevant verification commands and fix failures you caused.
 - Report honestly: list the commands you ran with their real results. Never claim tests passed unless you ran them. Clearly state anything incomplete, skipped or failing.
 - Do not commit or push unless the user asks. Never run `git push`.
+
+## Pull requests
+
+- The title follows Conventional Commits (`type: short summary`; types `feat`, `fix`, `docs`, `test`, `refactor`, `chore`, `ci`).
+- The description follows `.github/pull_request_template.md`. Fill every section by meaning: Changes are grouped by idea and explain why, never a list of files. Tick only the verification commands you really ran.
+- Use `/pr` to write the description from the commits and diff and open the PR.
