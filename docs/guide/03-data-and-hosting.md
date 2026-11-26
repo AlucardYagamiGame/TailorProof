@@ -2,7 +2,7 @@
 
 **Goal:** decide where your data lives, which key technical decisions the MVP **and** the next feature need, and (optionally) where your app will run — *before* writing code.
 
-> **From this step on, work in OpenCode**, started from the repository root. The agent reads `docs/requirements.md` and `docs/features/`, so its advice fits *your* app — and it can explain any option you do not understand yet.
+> **From this step on, work in Claude Code**, started from the repository root. The agent reads `docs/requirements.md` and `docs/features/`, so its advice fits *your* app — and it can explain any option you do not understand yet.
 
 The starter has no database on purpose. You choose what your app needs.
 
@@ -68,7 +68,7 @@ A cloud database gives you a **connection string** with a password inside. Treat
 
 - Store it in a `.env` file in the repository root. `.env` is already in `.gitignore`, so it is never committed.
 - On the hosting, set it as an **environment variable** in the dashboard.
-- **Never paste it into the AI chat.** OpenCode asks for permission before reading `.env` — say no unless you have a reason.
+- **Never paste it into the AI chat.** Claude Code can read `.env` like any other file, so never ask it to, and deny the permission prompt if it appears — say no unless you have a reason.
 - Commit a `.env.example` with the variable names and fake values, so others know what to set.
 
 ## 3.5 Connect a Neon database
@@ -105,7 +105,7 @@ Decide how `data/seed.json` gets into the app:
 
 ## 3.7 Decide with the agent
 
-In OpenCode, switch to the **plan** agent (`Shift+Tab`) and ask. Not sure what an option means? Ask the agent to explain it in simple words before you decide.
+In Claude Code, switch to **plan mode** (`Shift+Tab` until "plan mode" is shown) and ask. Not sure what an option means? Ask the agent to explain it in simple words before you decide.
 
 ```text
 Read docs/requirements.md and the planned feature in docs/features/.
@@ -117,9 +117,9 @@ a rewrite later (for example the shape of users and roles), and which decisions 
 Recommend one option and explain why. Do not change any files.
 ```
 
-**Expected agent behavior:** it reads the requirements and the feature file, compares the options against your entities and stories, recommends one, lists consequences (new dependency, `.env`, migrations or schema), and names the decisions the feature depends on — without suggesting to build the feature now. It does not edit files — the plan agent cannot.
+**Expected agent behavior:** it reads the requirements and the feature file, compares the options against your entities and stories, recommends one, lists consequences (new dependency, `.env`, migrations or schema), and names the decisions the feature depends on — without suggesting to build the feature now. It does not edit files — plan mode cannot.
 
-Then switch to **analyst** (it can edit only documentation) and record the decisions:
+Then start the **analyst** (`claude --agent analyst`; it can edit only documentation) and record the decisions:
 
 ```text
 Add decision log entries to docs/architecture.md: storage = [your choice], hosting = [your choice or "not decided"],

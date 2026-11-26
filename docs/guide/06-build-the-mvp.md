@@ -8,7 +8,7 @@
 - One wrong idea early breaks everything built on top of it.
 - You cannot review 2000 new lines. You can review 100.
 
-Small steps + a check after each step = a reliable result. This matters even more with free models.
+Small steps + a check after each step = a reliable result. Small steps also save your usage limits.
 
 ## 6.2 First: the data model in code and the seed
 
@@ -45,14 +45,14 @@ git switch -c feature/<short-name>
 
 ### 2. Plan
 
-Start a fresh session (`/new`) for every story — a short context works better.
+Start a fresh conversation (`/clear`) for every story — a short context works better. Switch to **plan mode** (`Shift+Tab` until "plan mode" is shown) before running the command.
 
 ```text
 /plan-feature User story 1 from docs/requirements.md: [paste the story].
 Follow docs/architecture/.
 ```
 
-**Expected agent behavior:** it runs as the read-only **plan** agent, reads the docs and code, and returns: frontend vs backend work, API endpoints (method, path, request, response, errors), acceptance criteria, small numbered steps, open questions. No files change.
+**Expected agent behavior:** it runs in read-only **plan mode**, reads the docs and code, and returns: frontend vs backend work, API endpoints (method, path, request, response, errors), acceptance criteria, small numbered steps, open questions. No files change.
 
 ### 3. Review the plan
 
@@ -65,13 +65,13 @@ Update the plan and show only the changed steps.
 
 ### 4. Implement
 
-Switch to **build** (`Shift+Tab`), then:
+Leave plan mode (`Shift+Tab` back to the normal mode), then:
 
 ```text
 /implement
 ```
 
-or one step at a time (recommended with free models):
+or one step at a time (recommended):
 
 ```text
 /implement Only step 1 of the plan: the backend endpoint with tests.
@@ -124,11 +124,11 @@ git pull
 ## 6.4 When the agent gets stuck
 
 1. Give it the **exact** error text: "`npm run test` fails with: ... Find the cause, explain it, fix it, run the tests again."
-2. Undo a bad change: `/undo` in OpenCode, or `git restore .` (discards all uncommitted changes in tracked files).
+2. Undo a bad change: `/rewind` in Claude Code, or `git restore .` (discards all uncommitted changes in tracked files).
 3. Make the step smaller.
 4. Check that the requirement is clear — vague requirements give vague code.
-5. Start a fresh session with `/new`.
-6. Try another free model with `/models`.
+5. Start a fresh conversation with `/clear`.
+6. Try another model with `/model`.
 7. If the agent repeats the same mistake, add a short rule to `AGENTS.md`.
 
 ## ✅ Result

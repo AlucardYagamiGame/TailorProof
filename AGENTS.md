@@ -13,8 +13,9 @@ e2e/        Playwright end-to-end tests (playwright.config.ts at the root)
 docs/       requirements.md (what to build), architecture.md (decisions), glossary.md (domain terms),
             development.md (how to run),
             features/ (planned features: do not implement unless asked)
-.opencode/  OpenCode agents: analyst (requirements, docs only), subagents frontend, backend, reviewer;
-            commands /plan-feature, /implement, /verify
+.claude/    Claude Code config: settings.json (permissions), agents (analyst: requirements, docs only;
+            subagents frontend, backend, reviewer), commands /plan-feature, /implement, /verify
+CLAUDE.md   entry point for Claude Code: imports AGENTS.md and the docs above
 ```
 
 - npm workspaces, one `package.json` at the root. Run commands from the root.

@@ -2,13 +2,13 @@
 
 **Goal:** turn your brief into requirements that are specific enough to build and test.
 
-> Keep working in OpenCode, started from the repository root.
+> Keep working in Claude Code, started from the repository root.
 
 Every agent reads `docs/requirements.md` before every task. Vague requirements = vague code. This is the most valuable 30 minutes of the project.
 
 ## 4.1 Complete the requirements with the agent
 
-In OpenCode, switch to the **analyst** agent (`Shift+Tab` or `/agents`). It can edit only `docs/` and `data/`, so it physically cannot start writing code:
+In Claude Code, start the **analyst** agent: run `claude --agent analyst` from the repository root. It can edit only `docs/` and `data/`, so it physically cannot start writing code:
 
 ```text
 Help me complete docs/requirements.md. Sections 1–4 already contain my brief.
@@ -28,7 +28,7 @@ Remove the guidance comments from the sections you fill in. Do not write any cod
 
 ## 4.2 Review the requirements critically
 
-Start a fresh session (`/new`), switch to **plan** and ask:
+Start a fresh conversation (`/clear`), switch to **plan mode** (`Shift+Tab`) and ask:
 
 ```text
 Review docs/requirements.md as a strict QA engineer.

@@ -1,15 +1,11 @@
 ---
+name: frontend
 description: >-
   Frontend specialist for apps/web (React, TypeScript, Vite, Tailwind CSS).
   Use it to build or change UI components and pages, responsive layouts, client-side
   state and interactions, calls to the backend API, loading/error/empty states,
   accessibility, and frontend tests (Vitest + React Testing Library).
-mode: subagent
-permissions:
-  # Subagents do their own work and do not start further subagents.
-  - action: subagent
-    resource: "*"
-    effect: deny
+tools: Read, Grep, Glob, Edit, Write, Bash
 ---
 
 You are the frontend developer for this repository. You work mainly in `apps/web`.
